@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jiahao Liang (Jaclyn)</title>
+  <meta name="description" content="Academic profile of Jiahao Liang, Ph.D. Student at the University of Hong Kong.">
+
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --paper: rgba(255, 255, 255, 0.88);
+      --paper-solid: #ffffff;
+      --text: #1f1a17;
+      --muted: #625a54;
+      --light-muted: #8a8179;
+      --line: rgba(80, 58, 43, 0.16);
+      --accent: #7a4e34;
+      --accent-dark: #4d2f21;
+      --accent-soft: #efe0d5;
+      --card: rgba(255, 252, 248, 0.95);
+      --shadow: 0 24px 70px rgba(42, 30, 22, 0.12);
+      --shadow-soft: 0 12px 32px rgba(42, 30, 22, 0.07);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.68;
+      background:
+        radial-gradient(circle at 9% 6%, rgba(122, 78, 52, 0.15), transparent 30%),
+        radial-gradient(circle at 92% 2%, rgba(122, 78, 52, 0.12), transparent 28%),
+        linear-gradient(135deg, #fbf8f4 0%, var(--bg) 48%, #eaded2 100%);
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.34) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.34) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.32), transparent 75%);
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 239, 232, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 13px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-dark);
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-brand::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(122, 78, 52, 0.12);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .nav-links a {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 650;
+      transition: all 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.75);
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 46px 24px 72px;
+      position: relative;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.55fr);
+      gap: 44px;
+      align-items: center;
+      padding: 42px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,250,245,0.72));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -120px;
+      width: 300px;
+      height: 300px;
+      background: rgba(122, 78, 52, 0.1);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-topline {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(122, 78, 52, 0.18);
+      color: var(--accent-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-logo {
+      height: 40px;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    .name {
+      margin: 0 0 14px;
+      font-size: clamp(1.95rem, 3.2vw, 2.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .role {
+      margin: 0 0 7px;
+      font-size: 1.12rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .affiliation {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 25px;
+      max-width: 700px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 7px 9px;
+      border-radius: 12px;
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+
+    .info-item:hover {
+      background: rgba(255, 255, 255, 0.62);
+      transform: translateX(2px);
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #fff8f1, #e8d2c2);
+      border: 1px solid rgba(122, 78, 52, 0.18);
+      color: var(--accent-dark);
+      box-shadow: 0 8px 18px rgba(80, 52, 35, 0.08);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+    }
+
+    .orcid {
+      color: #a6ce39;
+    }
+
+    .scholar {
+      color: #4285f4;
+    }
+
+    .rg {
+      color: #00a98f;
+    }
+
+    .info-label {
+      color: var(--light-muted);
+      font-weight: 650;
+      margin-right: 4px;
+    }
+
+    .profile-frame {
+      position: relative;
+      z-index: 2;
+      justify-self: center;
+      width: min(100%, 292px);
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #efe4da;
+      border: 1px solid rgba(122, 78, 52, 0.2);
+      box-shadow: 0 26px 56px rgba(42, 30, 22, 0.18);
+      position: relative;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      margin-top: 13px;
+      padding: 9px 12px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(80, 58, 43, 0.12);
+      border-radius: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    section {
+      scroll-margin-top: 90px;
+      margin-top: 32px;
+      padding: 32px 36px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,250,245,0.76));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-mark {
+      width: 10px;
+      height: 30px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), #c09a80);
+      box-shadow: 0 8px 18px rgba(122, 78, 52, 0.2);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2vw, 1.85rem);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0 0 15px;
+      font-size: 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .simple-line {
+      font-size: 1.04rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 14px;
+      background: linear-gradient(135deg, #fffaf5, var(--accent-soft));
+      color: var(--accent-dark);
+      border: 1px solid rgba(122, 78, 52, 0.17);
+      border-radius: 999px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.93rem;
+      font-weight: 600;
+      box-shadow: 0 8px 18px rgba(42, 30, 22, 0.05);
+    }
+
+    .cards,
+    .pub-list,
+    .presentation-list,
+    .skills-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card,
+    .pub-card,
+    .presentation-card,
+    .skill-card {
+      position: relative;
+      padding: 18px 20px;
+      background: var(--card);
+      border: 1px solid rgba(122, 78, 52, 0.14);
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 24px rgba(42, 30, 22, 0.045);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card::before,
+    .pub-card::before,
+    .presentation-card::before,
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      width: 3px;
+      border-radius: 999px;
+      background: rgba(122, 78, 52, 0.26);
+    }
+
+    .card:hover,
+    .pub-card:hover,
+    .presentation-card:hover,
+    .skill-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(42, 30, 22, 0.075);
+    }
+
+    .card-title {
+      margin: 0 0 7px;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .card-body {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pub-card,
+    .presentation-card,
+    .skill-card {
+      font-size: 0.96rem;
+    }
+
+    .pub-card strong,
+    .presentation-card strong,
+    .skill-card strong {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .academic-footer {
+      margin-top: 36px;
+      padding: 30px 34px 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,250,245,0.78));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .footer-name {
+      margin: 0 0 3px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .pronouns {
+      margin: 0 0 12px;
+      font-style: italic;
+      color: var(--accent-dark);
+      font-weight: 600;
+    }
+
+    .footer-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.62;
+    }
+
+    .footer-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      max-width: 190px;
+      max-height: 68px;
+      object-fit: contain;
+    }
+
+    .footer-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(122, 78, 52, 0.17);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .copyright {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(80, 58, 43, 0.12);
+      color: var(--light-muted);
+      font-size: 0.86rem;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    @media (max-width: 920px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+
+      .profile-frame {
+        order: -1;
+        width: min(100%, 280px);
+      }
+
+      .page {
+        padding: 28px 16px 58px;
+      }
+
+      section {
+        padding: 26px 22px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-side {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .name {
+        font-size: 2rem;
+      }
+
+      .nav-links a {
+        font-size: 0.76rem;
+        padding: 6px 8px;
+      }
+
+      .footer-email {
+        white-space: normal;
+      }
+    }
+  
+
+  /* ===== Final fancy academic refinement v2 ===== */
+
+  :root {
+    --bg: #f2ece5;
+    --paper: rgba(255, 255, 255, 0.84);
+    --paper-solid: #fffdfb;
+    --text: #191512;
+    --muted: #5d554e;
+    --light-muted: #867a70;
+    --line: rgba(64, 46, 34, 0.14);
+    --accent: #735039;
+    --accent-dark: #40281d;
+    --accent-soft: #ead8ca;
+    --accent-pale: #f7eee7;
+    --card: rgba(255, 252, 248, 0.94);
+    --shadow: 0 34px 95px rgba(34, 24, 17, 0.135);
+    --shadow-soft: 0 18px 48px rgba(34, 24, 17, 0.078);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 7% 7%, rgba(115, 80, 57, 0.18), transparent 27%),
+      radial-gradient(circle at 88% 4%, rgba(160, 126, 96, 0.15), transparent 25%),
+      radial-gradient(circle at 76% 88%, rgba(115, 80, 57, 0.105), transparent 31%),
+      linear-gradient(135deg, #fbf8f4 0%, #f2ece5 44%, #e9ddd1 100%);
+    background-attachment: fixed;
+  }
+
+  body::before {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.26) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.26) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.24), transparent 74%);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(118deg, transparent 0%, rgba(255,255,255,0.22) 42%, transparent 73%);
+    opacity: 0.78;
+    mix-blend-mode: soft-light;
+  }
+
+  /* Floating academic navigation */
+  .site-nav {
+    top: 14px;
+    width: min(1160px, calc(100% - 32px));
+    margin: 14px auto 0;
+    border-bottom: none;
+    background: transparent;
+    backdrop-filter: none;
+    pointer-events: none;
+  }
+
+  .nav-inner {
+    pointer-events: auto;
+    padding: 10px 14px 10px 18px;
+    border: 1px solid rgba(64, 46, 34, 0.15);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.84), rgba(248,241,235,0.72));
+    box-shadow:
+      0 18px 46px rgba(34, 24, 17, 0.105),
+      inset 0 1px 0 rgba(255,255,255,0.74);
+    backdrop-filter: blur(24px);
+  }
+
+  .nav-brand {
+    font-size: 0.98rem;
+    letter-spacing: 0.012em;
+  }
+
+  .nav-brand::before {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    box-shadow: 0 0 0 5px rgba(115, 80, 57, 0.12);
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: #6c6259;
+    font-size: 0.79rem;
+    letter-spacing: 0.012em;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.88);
+    color: var(--accent-dark);
+    box-shadow: 0 8px 22px rgba(34, 24, 17, 0.07);
+  }
+
+  .page {
+    padding-top: 46px;
+  }
+
+  /* Hero academic name card */
+  .hero {
+    border-radius: 20px;
+    padding: 40px 42px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.91), rgba(255,250,245,0.72));
+    border: 1px solid rgba(64, 46, 34, 0.145);
+    box-shadow:
+      0 36px 100px rgba(34, 24, 17, 0.135),
+      inset 0 1px 0 rgba(255,255,255,0.68);
+  }
+
+  .hero::after {
+    opacity: 0.68;
+  }
+
+  .eyebrow {
+    border-radius: 5px;
+    padding: 6px 10px;
+    background: rgba(234, 216, 202, 0.82);
+    letter-spacing: 0.1em;
+  }
+
+  .name {
+    font-size: clamp(1.68rem, 2.45vw, 2.22rem);
+    line-height: 1.14;
+    letter-spacing: -0.012em;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .role {
+    font-size: 1.04rem;
+    margin-bottom: 6px;
+  }
+
+  .affiliation {
+    font-size: 0.95rem;
+    max-width: 720px;
+  }
+
+  /* Top HKU logo: smaller and elegant */
+  .hero-logo {
+    height: 38px;
+    max-width: 190px;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    filter: none;
+  }
+
+  /* Footer HKU logo: larger and formal */
+  .footer-logo {
+    max-width: 320px;
+    max-height: 108px;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    filter: none;
+  }
+
+  /* More refined icon badges */
+  .icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 7px;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,0.96), rgba(232,211,195,0.82));
+    border: 1px solid rgba(64, 46, 34, 0.15);
+    box-shadow:
+      0 8px 20px rgba(34, 24, 17, 0.075),
+      inset 0 1px 0 rgba(255,255,255,0.76);
+  }
+
+  .info-item {
+    border-radius: 8px;
+  }
+
+  .info-item:hover {
+    background: rgba(255,255,255,0.56);
+  }
+
+  /* Profile photo refinement */
+  .profile-frame {
+    width: min(100%, 300px);
+  }
+
+  .profile-photo {
+    border-radius: 16px;
+    box-shadow:
+      0 32px 72px rgba(34, 24, 17, 0.18),
+      0 0 0 1px rgba(255,255,255,0.42);
+  }
+
+  .profile-photo img {
+    object-position: center center;
+  }
+
+  .photo-caption {
+    border-radius: 7px;
+    font-size: 0.81rem;
+  }
+
+  /* Academic sections */
+  section {
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.89), rgba(255,250,245,0.72));
+    border: 1px solid rgba(64, 46, 34, 0.135);
+    box-shadow:
+      0 20px 54px rgba(34, 24, 17, 0.075),
+      inset 0 1px 0 rgba(255,255,255,0.64);
+  }
+
+  .section-heading {
+    margin-bottom: 19px;
+  }
+
+  .section-mark {
+    width: 7px;
+    height: 28px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent), #bb977d);
+  }
+
+  h2 {
+    font-size: clamp(1.34rem, 1.75vw, 1.62rem);
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.975rem;
+  }
+
+  .simple-line {
+    font-size: 1.02rem;
+  }
+
+  /* Chips: refined academic tags */
+  .chip {
+    border-radius: 7px;
+    padding: 9px 13px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.93), rgba(234,216,202,0.82));
+    border: 1px solid rgba(64, 46, 34, 0.13);
+    box-shadow:
+      0 10px 24px rgba(34, 24, 17, 0.048),
+      inset 0 1px 0 rgba(255,255,255,0.70);
+  }
+
+  /* Cards: subtle depth, scholarly appearance */
+  .card,
+  .pub-card,
+  .presentation-card,
+  .skill-card {
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,251,247,0.92));
+    border: 1px solid rgba(64, 46, 34, 0.125);
+    box-shadow:
+      0 12px 30px rgba(34, 24, 17, 0.048),
+      inset 0 1px 0 rgba(255,255,255,0.68);
+  }
+
+  .card::before,
+  .pub-card::before,
+  .presentation-card::before,
+  .skill-card::before {
+    width: 3px;
+    top: 15px;
+    bottom: 15px;
+    border-radius: 2px;
+    background: rgba(115, 80, 57, 0.28);
+  }
+
+  .card:hover,
+  .pub-card:hover,
+  .presentation-card:hover,
+  .skill-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 18px 44px rgba(34, 24, 17, 0.082),
+      inset 0 1px 0 rgba(255,255,255,0.72);
+  }
+
+  .pub-card,
+  .presentation-card,
+  .skill-card {
+    font-size: 0.95rem;
+  }
+
+  /* Footer: more formal and balanced */
+  .academic-footer {
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.91), rgba(255,250,245,0.74));
+    border: 1px solid rgba(64, 46, 34, 0.135);
+    box-shadow:
+      0 20px 54px rgba(34, 24, 17, 0.075),
+      inset 0 1px 0 rgba(255,255,255,0.64);
+  }
+
+  .footer-name {
+    font-size: 1.26rem;
+  }
+
+  .footer-email {
+    border-radius: 7px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.92), rgba(234,216,202,0.84));
+    box-shadow: 0 10px 24px rgba(34, 24, 17, 0.05);
+  }
+
+  @media (max-width: 920px) {
+    .site-nav {
+      top: 8px;
+      width: min(100% - 24px, 1160px);
+      margin-top: 8px;
+    }
+
+    .nav-inner {
+      border-radius: 16px;
+      align-items: flex-start;
+    }
+
+    .hero-logo {
+      height: 34px;
+      max-width: 170px;
+    }
+
+    .footer-logo {
+      max-width: 250px;
+      max-height: 88px;
+    }
+
+    .name {
+      font-size: clamp(1.62rem, 6.5vw, 2.05rem);
+    }
+  }
+
+
+  /* ===== Footer logo and profile photo adjustment ===== */
+
+  .footer-logo {
+    max-width: 220px !important;
+    max-height: 76px !important;
+    object-fit: contain !important;
+  }
+
+  .profile-frame {
+    width: min(100%, 300px) !important;
+  }
+
+  .profile-photo {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+  }
+
+  .profile-photo img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  @media (max-width: 920px) {
+    .footer-logo {
+      max-width: 190px !important;
+      max-height: 66px !important;
+    }
+
+    .profile-frame {
+      width: min(100%, 280px) !important;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">Jiahao Liang</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#presentations">Presentations</a>
+        <a href="#languages">Languages</a>
+        <a href="#skills">Skills</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page" id="top">
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-topline">
+          <div class="eyebrow">Academic Profile</div>
+          <img class="hero-logo" src="/images/hku-logo.png" alt="The University of Hong Kong logo">
+        </div>
+
+        <h1 class="name">Jiahao Liang (Jaclyn)</h1>
+        <p class="role">Ph.D. Student at the University of Hong Kong</p>
+        <p class="affiliation">Academic Unit of Human Communication, Learning, and Development, Faculty of Education</p>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9">
+                <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"></path>
+                <circle cx="12" cy="9" r="2.4"></circle>
+              </svg>
+            </span>
+            <span><span class="info-label">Location:</span> Hong Kong, SAR, China</span>
+          </div>
+
+          <div class="info-item">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </span>
+            <span><span class="info-label">Email:</span> <a href="mailto:jaclyn.ljh1@connect.hku.hk">jaclyn.ljh1@connect.hku.hk</a></span>
+          </div>
+
+          <div class="info-item">
+            <span class="icon orcid">iD</span>
+            <span><a href="https://orcid.org/0009-0007-1646-8520" target="_blank" rel="noopener noreferrer">ORCID</a></span>
+          </div>
+
+          <div class="info-item">
+            <span class="icon scholar">GS</span>
+            <span><a href="https://scholar.google.com/citations?user=2DETXioAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></span>
+          </div>
+
+          <div class="info-item">
+            <span class="icon rg">RG</span>
+            <span><a href="https://www.researchgate.net/profile/Jiahao-Liang-27?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-frame">
+        <div class="profile-photo">
+          <img src="/images/profile.jpg" alt="Photo of Jiahao Liang">
+        </div>
+        <div class="photo-caption">Ph.D. Student · Speech and Hearing Sciences</div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-heading"><span class="section-mark"></span><h2>About Me</h2></div>
+      <p>Hello, and welcome!</p>
+      <p>I’m Jaclyn, a second-year Ph.D. student in Speech and Hearing Sciences.</p>
+      <p>My research centers on pediatric voice disorders, with a particular focus on the emotional and behavioral experiences of children with vocal fold nodules. I am also interested in understanding how families support children in everyday life, and how family-centered perspectives can inform clinical care and intervention.</p>
+      <p>In addition to my work in Speech and Hearing Sciences, my prior research experience has sparked my interest in Health Professions Education, especially in how students and practitioners in the health professions learn, collaborate, and develop across educational and clinical contexts.</p>
+      <p>This website brings together my research interests, publications, conference presentations, skills and accomplishments, along with reflections on my journey as an emerging researcher.</p>
+    </section>
+
+    <section id="education">
+      <div class="section-heading"><span class="section-mark"></span><h2>Education</h2></div>
+      <p class="simple-line">B.Ed.; M.Ed.; Ph.D. Student (HKU)</p>
+    </section>
+
+    <section id="research">
+      <div class="section-heading"><span class="section-mark"></span><h2>Research Interests</h2></div>
+      <div class="chips">
+        <span class="chip">Voice Disorders</span>
+        <span class="chip">Medical Education</span>
+        <span class="chip">Health Professions Education</span>
+        <span class="chip">Developmental Psychology</span>
+        <span class="chip">Educational Psychology</span>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-heading"><span class="section-mark"></span><h2>Research Experience</h2></div>
+      <div class="cards">
+        <div class="card">
+          <p class="card-title">2024-09 to 2025-08 | Research Assistant</p>
+          <p class="card-body">Bau Institute of Medical &amp; Health Sciences Education, Li Ka Shing Faculty of Medicine, The University of Hong Kong</p>
+        </div>
+        <div class="card">
+          <p class="card-title">2023-10 to 2024-09 | Research Assistant</p>
+          <p class="card-body">Department of Pharmacology and Pharmacy, Li Ka Shing Faculty of Medicine, The University of Hong Kong</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-heading"><span class="section-mark"></span><h2>Publications</h2></div>
+      <div class="pub-list">
+        <div class="pub-card">He, Q., <strong>Liang, J.</strong>, &amp; Ganotice, F. A. (2026). From initial perceptions of interprofessional learning to professional self-efficacy: Professional identity as an indirect pathway in a two-wave longitudinal study. <em>BMC Medical Education</em>. (Under Review)</div>
+        <div class="pub-card">He, Q., <strong>Liang, J.</strong>, &amp; Ganotice, F. A. (2026). Authors’ reply to the commentary by Chen (2026). <em>Advances in Health Sciences Education</em>. (Under Review)</div>
+        <div class="pub-card"><strong>Liang, J.</strong>, Tam, E. Y. Y., Leung, A. K. K., Lee, M. T., Chu, J. K. P., Leung, S. M., Lam, M. P. S., Tam, J. P. H., Wong, L. C. K., Cheng, F. W. T., &amp; Langley, C. (2026). Comparing pharmacy student performance with the expectations of teachers in objective structured clinical examinations. <em>BMC Medical Education</em>. (Under Review)</div>
+        <div class="pub-card">He, Q., <strong>Liang, J.</strong>, &amp; Ganotice, F. A. (2026). Personality and emotional intelligence among health professions students: The roles of perceived group cohesion, perceived team emotional intelligence, and attitudes toward interprofessional education. <em>Advances in Health Sciences Education</em>, 1-27. <a href="https://doi.org/10.1007/s10459-026-10562-8" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s10459-026-10562-8</a></div>
+        <div class="pub-card">He, Q., Ye, Y., <strong>Liang, J.</strong>, &amp; Zheng, B. (2026). The relationship between emotional intelligence and resilience in healthcare practitioners and students: a multilevel meta-analysis. <em>BMC Medical Education</em>, <em>26</em>(1), 404. <a href="https://doi.org/10.1186/s12909-026-08619-8" target="_blank" rel="noopener noreferrer">https://doi.org/10.1186/s12909-026-08619-8</a></div>
+        <div class="pub-card"><strong>Liang, J.</strong>, Sun, J., Xu, X., Lee, K., &amp; Siu, C. T. S. (2026). Early development of visual perspective-taking: Its associations with stimuli feature, child age, and family socio-economic status. <em>Early Childhood Education Journal</em>, <em>54</em>(2), 757-772. <a href="https://doi.org/10.1007/s10643-025-01866-2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s10643-025-01866-2</a></div>
+        <div class="pub-card">Lam, V. S. Y., Chan, K., <strong>Liang, J.</strong>, &amp; Cheng, F. W. T. (2024). A systematic review and meta-analysis of the incidence rate of major adverse kidney events following COVID-19 infection. <em>Research in Clinical Pharmacy</em>, <em>2</em>(2), 47-54. <a href="https://doi.org/10.59931/rcp.24.0005" target="_blank" rel="noopener noreferrer">https://doi.org/10.59931/rcp.24.0005</a></div>
+        <div class="pub-card">Cheng, F. W. T., Chau, M., Li, X., <strong>Liang, J.</strong>, Wong, I. C. K., &amp; Tang, S. C. W. (2024). Risk of first peritonitis episode in continuous ambulatory peritoneal dialysis and automated peritoneal dialysis: A population-based study. <em>Clinical Kidney Journal</em>, <em>17</em>(5), sfae118. <a href="https://doi.org/10.1093/ckj/sfae118" target="_blank" rel="noopener noreferrer">https://doi.org/10.1093/ckj/sfae118</a></div>
+      </div>
+    </section>
+
+    <section id="presentations">
+      <div class="section-heading"><span class="section-mark"></span><h2>Conference Presentations</h2></div>
+      <div class="presentation-list">
+        <div class="presentation-card">He, Q., <strong>Liang, J.</strong>, &amp; Ganotice, F. A. (2026, June 29). The pathway from perception to professional self-efficacy: The mediating role of professional identity in interprofessional education. [Poster presentation]. ANZAHPE 2026, Te Pae Christchurch Convention Centre, Ōtautahi Christchurch, Aotearoa New Zealand.</div>
+        <div class="presentation-card"><strong>Liang, J.</strong>, He, Q., Ye, Y., &amp; Ganotice, F. A. (2026, April 11). Efficacy of peer teaching in interprofessional group learning: A mixed-method exploration. [Oral presentation]. AERA 2026, JW Marriott LA Live, Los Angeles, California, United States.</div>
+        <div class="presentation-card"><strong>Liang, J.</strong>, He, Q., &amp; Ganotice, F. A. (2026, April 9). From ‘Who I Am’ to ‘What I Be’: Pathways to emotional intelligence in interprofessional learning. [Oral presentation]. AERA 2026, Convention Center, Los Angeles, California, United States.</div>
+        <div class="presentation-card"><strong>Liang, J.</strong>, Sun, J., Xu, X., Lee, K., &amp; Siu, C. T. S. (2025, May 1). Early development of visual perspective-taking: Its associations with stimuli feature, child age, and family socio-economic status. [Poster presentation]. 2025 SRCD, Minneapolis Convention Center, Minneapolis, Minnesota, United States.</div>
+      </div>
+    </section>
+
+    <section id="languages">
+      <div class="section-heading"><span class="section-mark"></span><h2>Languages</h2></div>
+      <div class="chips">
+        <span class="chip">English (Fluent)</span>
+        <span class="chip">Mandarin (Native)</span>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading"><span class="section-mark"></span><h2>Skills &amp; Tools</h2></div>
+      <div class="skills-list">
+        <div class="skill-card"><strong>Quantitative Data Processing and Analysis:</strong> R, Python, SPSS, AMOS, Mplus</div>
+        <div class="skill-card"><strong>Qualitative Data Analysis:</strong> NVivo, MAXQDA</div>
+        <div class="skill-card"><strong>Survey Design and Data Collection:</strong> Qualtrics, Sojump</div>
+        <div class="skill-card"><strong>Reference Management and Evidence Synthesis:</strong> EndNote, Zotero, Covidence</div>
+        <div class="skill-card"><strong>Data Visualization and Scientific Graphing:</strong> Origin</div>
+        <div class="skill-card"><strong>Visual and Multimedia Communication:</strong> Adobe Photoshop, Adobe Audition, Adobe Premiere Pro, Canva, CapCut</div>
+        <div class="skill-card"><strong>Office and Productivity Tools:</strong> Microsoft Office Suite</div>
+      </div>
+    </section>
+
+    <footer class="academic-footer">
+      <div class="footer-main">
+        <div>
+          <p class="footer-name">Jaclyn Jiahao Liang</p>
+          <p class="pronouns">she/her/hers</p>
+          <p class="footer-text">
+            PhD Student, Voice Research Laboratory<br>
+            Academic Unit of Human Communication, Learning, and Development (HCLD)<br>
+            Faculty of Education, The University of Hong Kong<br>
+            Room 528, 5/F., Meng Wah Complex
+          </p>
+        </div>
+
+        <div class="footer-side">
+          <img class="footer-logo" src="/images/hku-logo.png" alt="The University of Hong Kong logo">
+          <a class="footer-email" href="mailto:jaclyn.ljh1@connect.hku.hk">
+            ✉ jaclyn.ljh1@connect.hku.hk
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 Jaclyn Jiahao Liang. All rights reserved.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

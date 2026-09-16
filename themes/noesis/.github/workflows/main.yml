@@ -1,0 +1,49 @@
+name: Validate Generated Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: latest
+
+      - name: Check Theme Requirements
+        run: |
+          test -f theme.toml
+          test -f hugo.toml
+          test -f README.md
+          test -f LICENSE.md
+          test -f images/screenshot.png || test -f images/screenshot.jpg
+          test -f images/tn.png || test -f images/tn.jpg
+
+      - name: Build Example Site
+        working-directory: exampleSite
+        run: hugo --minify --baseURL /
+
+      - name: Validate Generated Files
+        uses: anishathalye/proof-html@v2.2.3
+        with:
+          directory: ./exampleSite/public
+          check_css: true
+          validator_ignore: .*text-rendering.*
+          disable_external: true
+          enforce_https: false
+          check_favicon: false
+          check_opengraph: false

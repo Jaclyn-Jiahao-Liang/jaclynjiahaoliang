@@ -1,0 +1,24 @@
+baseURL = "https://jaclynjiahaoliang.com/"
+languageCode = "en-US"
+locale = "en-US"
+title = "Jiahao Liang (Jaclyn)"
+theme = "noesis"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  brand = "Jiahao Liang"
+  description = "Academic profile of Jiahao Liang, Ph.D. Student at the University of Hong Kong."
+  mainSections = []
+
+  [params.navigation]
+    rssInMenu = false
+
+  [params.author]
+    name = "Jiahao Liang"
+    email = "jaclyn.ljh1@connect.hku.hk"
+
+[markup]
+  [markup.highlight]
+    style = "evergarden"
